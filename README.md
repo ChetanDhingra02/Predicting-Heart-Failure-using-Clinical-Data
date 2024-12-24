@@ -73,11 +73,13 @@ After cleaning the data, we checked for normality by creating histograms.
 
 We observed that a lot of variables in our data exhibited right skewness, prompting us to apply a Box-Cox transformation. This transformation helped normalize the data and improve its suitability for modeling.![](Aspose.Words.409c28e7-4cbd-45f6-8b15-98fa314a233c.003.jpeg)
 
-Next, we assessed multicollinearity by calculating the Variance Inflation Factor (VIF). The results showed no signs of multicollinearity, ensuring that our features were not highly ![](Aspose.Words.409c28e7-4cbd-45f6-8b15-98fa314a233c.004.png)![](Aspose.Words.409c28e7-4cbd-45f6-8b15-98fa314a233c.005.png)correlated with each other.
+Next, we assessed multicollinearity by calculating the Variance Inflation Factor (VIF). The results showed no signs of multicollinearity, ensuring that our features were not highly correlated with each other.
+ ![](Aspose.Words.409c28e7-4cbd-45f6-8b15-98fa314a233c.004.png)![](Aspose.Words.409c28e7-4cbd-45f6-8b15-98fa314a233c.005.png)
 
 Since each variable showed a VIF value of less than 2, we deduced that there was no significant multicollinearity between our variables.
 
-We then examined interaction ![](Aspose.Words.409c28e7-4cbd-45f6-8b15-98fa314a233c.006.png)term effects using logistic regression. 
+We then examined interaction term effects using logistic regression. 
+  ![](Aspose.Words.409c28e7-4cbd-45f6-8b15-98fa314a233c.006.png)
 
 Since this new model did not show any significant interaction effect between our variables, we moved on to the process of building our models. 
 
