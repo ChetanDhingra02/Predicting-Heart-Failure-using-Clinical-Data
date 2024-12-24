@@ -1,8 +1,6 @@
 # Predicting-Heart-Failure-using-Clinical-Data
 Statistical Modeling of Mortality Risk in Heart Failure
 
-Chetan Dhingra|1862481|<cdhingra@ualberta.ca>
-
 **Introduction:**
 
 The goal of this project is to determine whether clinical indicators can be used to forecast a patient's risk of dying from heart failure. We aim to develop prediction models that will use various clinical markers and assess their relationship with the event of survival or death of a patient post a heart failure event based on some training data and then use these characteristics to further predict whether a new patient will survive or die depending on the values of these clinical markers.
@@ -65,27 +63,36 @@ We will use visualizations like boxplots, histograms, and ROC curve sketching to
 
 Upon receiving the dataset, we first examined it for missing values and found that there were none, which was a fortunate outcome. Next, we used some boxplots to determine if there were outliers in our dataset.
 
+
 ` `![](Aspose.Words.409c28e7-4cbd-45f6-8b15-98fa314a233c.001.jpeg)![](Aspose.Words.409c28e7-4cbd-45f6-8b15-98fa314a233c.002.jpeg)
+
 
 To handle these outliers, we applied Cook’s Distance using a logistic regression model. Since our target variable, "DEATH\_EVENT," is binary, we used Cook’s Distance to eliminate any influential points and outliers, resulting in a cleaner dataset.
 
 After cleaning the data, we checked for normality by creating histograms.
 
-We observed that a lot of variables in our data exhibited right skewness, prompting us to apply a Box-Cox transformation. This transformation helped normalize the data and improve its suitability for modeling.![](Aspose.Words.409c28e7-4cbd-45f6-8b15-98fa314a233c.003.jpeg)
+We observed that a lot of variables in our data exhibited right skewness, prompting us to apply a Box-Cox transformation. This transformation helped normalize the data and improve its suitability for modeling.
+
+![](Aspose.Words.409c28e7-4cbd-45f6-8b15-98fa314a233c.003.jpeg)
 
 Next, we assessed multicollinearity by calculating the Variance Inflation Factor (VIF). The results showed no signs of multicollinearity, ensuring that our features were not highly correlated with each other.
- ![](Aspose.Words.409c28e7-4cbd-45f6-8b15-98fa314a233c.004.png)![](Aspose.Words.409c28e7-4cbd-45f6-8b15-98fa314a233c.005.png)
+
+![](Aspose.Words.409c28e7-4cbd-45f6-8b15-98fa314a233c.004.png)![](Aspose.Words.409c28e7-4cbd-45f6-8b15-98fa314a233c.005.png)
 
 Since each variable showed a VIF value of less than 2, we deduced that there was no significant multicollinearity between our variables.
 
 We then examined interaction term effects using logistic regression. 
-  ![](Aspose.Words.409c28e7-4cbd-45f6-8b15-98fa314a233c.006.png)
+![](Aspose.Words.409c28e7-4cbd-45f6-8b15-98fa314a233c.006.png)
 
 Since this new model did not show any significant interaction effect between our variables, we moved on to the process of building our models. 
 
-Now, we split the dataset into training and testing subsets. We initially built a logistic regression model using the training data and evaluated its performance on the test data and got the following confusion matrix:![](Aspose.Words.409c28e7-4cbd-45f6-8b15-98fa314a233c.007.png)
+Now, we split the dataset into training and testing subsets. We initially built a logistic regression model using the training data and evaluated its performance on the test data and got the following confusion matrix:
 
-Following this, we refined the model using Lasso and Ridge regression techniques, again evaluating the performance of these models on the test data and got the following confusion matrix by checking the model performance on the test data for each case.![](Aspose.Words.409c28e7-4cbd-45f6-8b15-98fa314a233c.008.png)![](Aspose.Words.409c28e7-4cbd-45f6-8b15-98fa314a233c.009.png)
+![](Aspose.Words.409c28e7-4cbd-45f6-8b15-98fa314a233c.007.png)
+
+Following this, we refined the model using Lasso and Ridge regression techniques, again evaluating the performance of these models on the test data and got the following confusion matrix by checking the model performance on the test data for each case.
+
+![](Aspose.Words.409c28e7-4cbd-45f6-8b15-98fa314a233c.008.png)![](Aspose.Words.409c28e7-4cbd-45f6-8b15-98fa314a233c.009.png)
 
 Lasso model:
 
